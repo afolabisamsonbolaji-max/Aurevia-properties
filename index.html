@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aurevia Properties — discover exceptional luxury homes in Abuja, Nigeria.">
+<title>Aurevia Properties | Exceptional Homes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #101812;
+  --green: #20372b;
+  --gold: #c8a66a;
+  --cream: #f5f1e8;
+  --white: #fffdf8;
+  --grey: #777d75;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; }
+
+.announcement {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.announcement span { color: var(--gold); }
+
+header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 36px;
+  color: white;
+  border-bottom: 1px solid #ffffff40;
+}
+
+nav {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-symbol {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold);
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
+
+.logo-name {
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.logo-sub {
+  display: block;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links a {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-button {
+  border: 1px solid var(--gold);
+  padding: 12px 16px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff70;
+  padding: 8px 12px;
+}
+
+.hero {
+  min-height: 720px;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #101812e8 0%, #101812a6 48%, #10181230 100%),
+    url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85')
+    center/cover;
+}
+
+.hero-content {
+  width: 1200px;
+  max-width: 100%;
+  padding: 130px 6% 80px;
+  margin: auto;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  margin-bottom: 22px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.08;
+  max-width: 780px;
+}
+
+h1 em { color: var(--gold); }
+
+.hero p {
+  max-width: 460px;
+  color: #e0e3dc;
+  font-size: 14px;
+  margin: 25px 0 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 21px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.btn-gold:hover {
+  background: #e1c58e;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border-color: #ffffff80;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  right: 6%;
+  padding: 18px 0;
+  border-top: 1px solid #ffffff50;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 28px 5%;
+  background: var(--cream);
+}
+
+.trust-item {
+  border-right: 1px solid #d6d2c8;
+  text-align: center;
+  padding: 8px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.trust-item:last-child { border: 0; }
+
+.trust-item span {
+  display: block;
+  color: var(--gold);
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+section { padding: 95px 6%; }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-size: clamp(35px, 4.5vw, 56px);
+  line-height: 1.15;
+}
+
+.section-heading p {
+  max-width: 380px;
+  color: var(--grey);
+  font-size: 13px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  padding: 10px 16px;
+  border: 1px solid #deded7;
+  background: transparent;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--green);
+  color: white;
+}
+
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.property-card {
+  border: 1px solid #e6e3dc;
+  background: white;
+  transition: .3s;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #10181212;
+}
+
+.property-image {
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+  background: #e8e6df;
+}
+
+.property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+}
+
+.property-card:hover img { transform: scale(1.04); }
+
+.property-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--cream);
+  padding: 7px 10px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.save-button {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 35px;
+  height: 35px;
+  border: 0;
+  border-radius: 50%;
+  background: #101812d9;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.property-info { padding: 22px; }
+
+.property
